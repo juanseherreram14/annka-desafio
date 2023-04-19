@@ -1,4 +1,5 @@
- # Desafio programación - para vacante Back-end
+# Desafio programación - para vacante Back-end
+Este desafio lo puedes hacer desde la comodidad de tu casa. Dedique todo el tiempo que desee, nosotros esperamos que nos entregues en máximo 3 dias.
 
 ## Presentación del problema
 
@@ -8,7 +9,7 @@ Nuestro cliente interno necesita actualizar periódicamente los datos de nuestro
 
 Nuestro equipo de productos pensó que podíamos hacer una actualización por lotes a través de un CSV.
 
-[Descargue un CSV de ejemplo aquí](assets/example.csv)
+[Descargue un CSV de ejemplo aquí](example.csv)
 
 ## Requisitos
 
@@ -16,10 +17,9 @@ Nuestro equipo de productos pensó que podíamos hacer una actualización por lo
 - Crear un endpoint de lista de socios;
 - Documentación sobre cómo ejecutar la aplicación.
 
-
 ## Bono
 
-- Validaciones de los campos, no queremos que un cédula reemplace a un RUC;
+- Validaciones de los campos, no queremos que una cédula reemplace a un RUC;
 - Sería interesante si tuviéramos la información de la Ciudad y Provincia de nuestros socios en nuestra base de datos;
 - Enviar un mensaje de bienvenida a los nuevos socios (el envío de un correo electrónico en realidad no tiene que ocurrir, solo puede iniciar sesión);
 - Las pruebas unitarias y de integración serán diferenciales;
@@ -49,6 +49,6 @@ Para enviarnos su código, haga un fork de este repositorio y envíenos un pull 
 
 Cualquier duda técnica, envía un mensaje a amka.contato@gmail.com.
 
-Tendrás 3 días para completar esta prueba después de recibir este desafío. 
+Tendrás 3 días para completar este desafio después de recibirlo. 
 
 ¡Éxitos!
