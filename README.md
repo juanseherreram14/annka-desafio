@@ -1,17 +1,17 @@
 # Desafio programación - para vacante Front-end
 
 
-El propósito de esta prueba es evaluar su conocimiento técnico en React/React Native.
+El propósito de este desafio es evaluar tu conocimiento técnico en React/React Native.
 
-La prueba consiste en utilizar la API([pokeapi v2](https://pokeapi.co/docsv2/#)) para construir una Pokédex.
+El desafio consiste en utilizar la API([pokeapi v2](https://pokeapi.co/docsv2/#)) para construir una Pokédex.
 
-Este reto lo debes hacer en casa. Dedique todo el tiempo que desee, pero normalmente no debería necesitar más de unas pocas horas.
+Este desafio lo puedes hacer desde la comodidad de tu casa. Dedique todo el tiempo que desee, nosotros esperamos que nos entregues hasta en 3 dias.
 
 # Instrucciones de entrega del desafío
 
-1. Primero, haga un fork este proyecto a su cuenta de Github (cree uno si no tiene).
+1. Primero, haga un fork de este proyecto a su cuenta de Github (cree uno si no tiene) o crea un repossitorio nuevo.
 2. Luego implemente el proyecto como se describe a continuación en su clone local.
-3. Finalmente, envíe por correo electrónico un archivo de patch a su contacto en ANNKA.
+3. Finalmente, envíe por correo electrónico el link para el repositorio que creaste ou clonaste.
 
 # Descripción del Proyecto
 
@@ -43,19 +43,20 @@ Con esta API ([pokeapi v2](https://pokeapi.co/docsv2/#)) en la mano, necesitamos
 
 1. Manejar la autenticación o autorización (puntos extra si lo hace)
 2. No necesita estar hospedado en ningún servidor
-3. Tratar con API diferentes a las que recomienda la prueba
+3. Tratar con API diferentes a las que recomienda el desafio
 4. Estar escrito usando algún framework específico (pero no hay nada de malo en usarlos también, usa el que creas que es mejor).
 
-# Tecnologías que deben estar presentes en la prueba
+# Tecnologías que deben estar presentes en el desafio
 
 - React/React Native
 - Node.js
 - React Testing Library
 
-**Não necessário mas se tiver será um diferencial**
+** No es necessário pero, si lo presentas seria un credito a tu favor.**
 
-- Saber protocolos gRPC
+- Protocolos gRPC
 - Rest API
+- Docker, sería bueno cargar su sistema con solo una línea de comando.
 
 # Evaluación
 
@@ -67,7 +68,7 @@ Su proyecto será evaluado de acuerdo con los siguientes criterios:
 4. Calidad y cobertura de las pruebas unitarias/funcionales.
 5. Tener una apariencia amigable 
 
-Además, intentaremos verificar su familiaridad con las bibliotecas estándar, así como su experiencia con la programación funcional dentro de la estructura de su proyecto.
+Además, intentaremos verificar su familiaridad con las bibliotecas estándar, así como su experiencia con la programación funcional dentro de la estructura de su proyecto. El objetivo es evaluar tu experiencia en la escritura de código de fácil mantenimiento y alta cohesión.
 
 ---
 
