@@ -1,0 +1,51 @@
+.logo{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.SearchBar{
+    margin-bottom: 50px;
+}
+
+.tarjeta-pokemon-container {
+    margin-top: 90px;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 100px); /* Cambiado */
+    margin: 0 auto; /* Agregado */
+  }
+  
+  .TarjetaPokemon {
+    margin-top: 90px;
+    max-width: 300px; /* Agregado */
+    width: 100%; /* Agregado */
+    margin-right: 20px; /* Modificado */
+  }
+  
+  .TarjetaPokemon:last-child {
+    margin-right: 0; /* Agregado */
+  }
+  
+  
+
+.main{
+    background-color: aliceblue;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.button {
+    font-family: "Press Start 2P", cursive;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  
+  .button:hover {
+    background-color: #eee;
+  }
+  

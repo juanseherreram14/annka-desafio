@@ -1,0 +1,133 @@
+.card {
+    margin-top: 50px;
+    width: 20%;
+    margin: 20px 2.5%;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+  
+  .card-image {
+    width: 100%;
+    height: auto;
+    max-width: 70%;
+    margin-bottom: 10px;
+    object-fit: contain;
+  }
+  
+  .card-content {
+    width: 100%;
+    font-family: "Press Start 2P", cursive;
+    font-size: 18px;
+    line-height: 20px;
+  }
+  
+  .card-number {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+  }
+  
+  .card-types {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin: 10px;
+  }
+  
+  .card-type {
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #fff;
+  }
+  
+  .card-type.normal {
+    background-color: #a8a878;
+  }
+  
+  .card-type.fire {
+    background-color: #f08030;
+  }
+  
+  .card-type.water {
+    background-color: #6890f0;
+  }
+  
+  .card-type.electric {
+    background-color: #f8d030;
+  }
+  
+  .card-type.grass {
+    background-color: #78c850;
+  }
+  
+  .card-type.ice {
+    background-color: #98d8d8;
+  }
+  
+  .card-type.fighting {
+    background-color: #c03028;
+  }
+  
+  .card-type.poison {
+    background-color: #a040a0;
+  }
+  
+  .card-type.ground {
+    background-color: #e0c068;
+  }
+  
+  .card-type.flying {
+    background-color: #a890f0;
+  }
+  
+  .card-type.psychic {
+    background-color: #f85888;
+  }
+  
+  .card-type.bug {
+    background-color: #a8b820;
+  }
+  
+  .card-type.rock {
+    background-color: #b8a038;
+  }
+  
+  .card-type.ghost {
+    background-color: #705898;
+  }
+  
+  .card-type.dragon {
+    background-color: #7038f8;
+  }
+  
+  .card-type.dark {
+    background-color: #705848;
+  }
+  
+  .card-type.steel {
+    background-color: #b8b8d0;
+  }
+  
+  .card-type.fairy {
+    background-color: #ee99ac;
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Agrandar la tarjeta al hacer hover */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Cambiar la sombra al hacer hover */
+  }
+  
