@@ -1,4 +1,6 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
+import { PokeData } from '../Components/ConsumePokeAPI.tsx';
+import axios from 'axios'
 import SearchBar from '../Components/SearchBar';
 import PdLogo from '../Images/PdLogo.png';
 import '../Style/Main.css';
@@ -9,6 +11,25 @@ import squirtle from '../Images/Squirtle.png';
 
 
 const MainPage = () => {
+    const AddToPokedexURL = "localhost:5000/api/addToPokeDex"
+    const [pokeData, setPokeData] = useState([])
+    const [names,setNames] = useState([]);
+
+    useEffect(() => {
+       
+        async function fetchdata(){
+           
+            const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=151');
+            setNames(response.data.results);
+        }
+        fetchdata()
+      }, []);
+      
+
+      const SubmitPokeButton = ({name,url})=>{
+        axios.post(`$AddToPokedexURL?name=${name}&url=${url}`)
+      }
+
     return (
         <body className='main'>
             <div className='logo'>
@@ -16,7 +37,7 @@ const MainPage = () => {
             </div>
             <div className='SearchBar'>
                 <SearchBar></SearchBar>
-            </div>
+            </div> 
             <div className='tarjeta-pokemon-container'>
                 <TarjetaPokemon className='TarjetaPokemon'
                 imageSrc={bulbasaur}
@@ -41,6 +62,18 @@ const MainPage = () => {
         type1="water" 
         
         />
+
+<ul>
+  {names.map((pokemon, index) => (
+    <>
+    <TarjetaPokemon className='TarjetaPokemon'
+    name={pokemon.name}key={index}>{pokemon.name}</TarjetaPokemon>
+    <button onClick={SubmitPokeButton(pokemon.name,pokemon.url)}> Guardar </button>
+    </>
+    
+  ))}
+</ul>
+
 
             </div>
 
