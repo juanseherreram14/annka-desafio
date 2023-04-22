@@ -24,11 +24,31 @@ const MainPage = () => {
         }
         fetchdata()
       }, []);
-      
 
+
+      // guarda pokemons en la pokedex 
       const SubmitPokeButton = ({name,url})=>{
-        axios.post(`$AddToPokedexURL?name=${name}&url=${url}`)
-      }
+        try{
+            axios.post(`http://localhost:4000/api/add?name=${name}&url=${url}`)
+        }catch(error){
+            console.error(error)
+        }
+    }
+
+
+    //elimina pokemons de la pokedex
+    const DeletePokeButton = ({name,url})=>{
+        try{
+            axios.delete(`http://localhost:4000/api/delete?name=${name}&url=${url}`)
+        }catch(error){
+            console.error(error)
+        } }
+
+
+        
+
+    
+
 
     return (
         <body className='main'>

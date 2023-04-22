@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import { GetPokeData } from './APIRoutes/getPokeData';
 import { AddToPokeDex } from './APIRoutes/SavePokeData';
+import { GetAllPokemonData } from './APIRoutes/GetPokedex';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
@@ -29,6 +30,7 @@ app.use(cors());
 
 app.get('/pokemon', GetPokeData);
 app.post('/api/add', AddToPokeDex);
+app.get('/api/get', GetAllPokemonData);
 
 //npx ts-node-dev server.ts
 app.listen(4000, () => {
