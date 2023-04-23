@@ -27,22 +27,9 @@ const MainPage = () => {
 
 
       // guarda pokemons en la pokedex 
-      const SubmitPokeButton = ({name,url})=>{
-        try{
-            axios.post(`http://localhost:4000/api/add?name=${name}&url=${url}`)
-        }catch(error){
-            console.error(error)
-        }
-    }
 
 
-    //elimina pokemons de la pokedex
-    const DeletePokeButton = ({name,url})=>{
-        try{
-            axios.delete(`http://localhost:4000/api/delete?name=${name}&url=${url}`)
-        }catch(error){
-            console.error(error)
-        } }
+
 
 
         
@@ -88,8 +75,8 @@ const MainPage = () => {
     <>
     <TarjetaPokemon className='TarjetaPokemon'
     name={pokemon.name}key={index}>{pokemon.name}</TarjetaPokemon>
-    <button onClick={SubmitPokeButton(pokemon.name,pokemon.url)}> Guardar </button>
-    </>
+    <button onClick={console.log("k")}> Guardar </button>
+    </>//SubmitPokeButton(pokemon.name,pokemon.url)
     
   ))}
 </ul>
