@@ -36,7 +36,7 @@ const MainPage = () => {
             </div> 
             <div className='tarjeta-pokemon-container'>
                 <TarjetaPokemon className='TarjetaPokemon'
-                imageSrc={bulbasaur}
+                //imageSrc={bulbasaur}
                 number="001" 
                 name="Bulbasaur"
                 type1="grass" 
@@ -44,7 +44,7 @@ const MainPage = () => {
                 />
 
         <TarjetaPokemon className='TarjetaPokemon'
-        imageSrc={charmander}
+       // imageSrc={charmander} 
         number="004" 
         name="Charmander"
         type1="fire" 
@@ -52,7 +52,7 @@ const MainPage = () => {
         />
 
         <TarjetaPokemon className='TarjetaPokemon'
-        imageSrc={squirtle}
+        //imageSrc={squirtle}
         number="007" 
         name="Squirtle"
         type1="water" 
