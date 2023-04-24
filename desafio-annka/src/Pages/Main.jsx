@@ -22,8 +22,14 @@ const MainPage = () => {
       }, []);
       
 
-      const SubmitPokeButton = ({name,url})=>{
-        axios.post(`$AddToPokedexURL?name=${name}&url=${url}`)
+      const SubmitPokeButton = async ({name,url})=>{
+
+        try{
+          const response = await axios.post('http://localhost:4000/api/add', { name, url });
+          console.log(response.data);
+        }catch(err){
+          console.log(err)
+        }
       }
 
     return (
@@ -61,10 +67,12 @@ const MainPage = () => {
 
 <ul>
   {names.map((pokemon, index) => (
+   
     <>
+   
     <TarjetaPokemon className='TarjetaPokemon'
     name={pokemon.name}key={index}>{pokemon.name}</TarjetaPokemon>
-    <button onClick={SubmitPokeButton(pokemon.name,pokemon.url)}> Guardar </button>
+   <button onClick={() => SubmitPokeButton({ name: pokemon.name, url: pokemon.url })}>Guardar</button>
     </>
     
   ))}

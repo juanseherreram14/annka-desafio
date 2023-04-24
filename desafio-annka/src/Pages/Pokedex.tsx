@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react';
+import TarjetaPokemon from '../Components/TarjetaPokemon';
 import axios from 'axios';
 
 export default function Pokedex() {
