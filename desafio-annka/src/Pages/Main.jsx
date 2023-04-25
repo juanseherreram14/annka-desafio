@@ -38,6 +38,8 @@ const MainPage = () => {
     axios.post(`${AddToPokedexURL}?name=${name}&url=${url}`)
   }
 
+ 
+  
   return (
     <body className='main'>
       <div className='logo'>
@@ -65,9 +67,7 @@ const MainPage = () => {
                     {pokemon.name}
                   </TarjetaPokemon>
             </Link>
-              <div>
-            <button className="btnDetalles" onClick={()=>{navigate('/pokemon/${index}')}}>Ver detalles</button>
-        </div>
+             
               <button className='btnGuardar' onClick={() => SubmitPokeButton({ name: pokemon.name, url: pokemon.url })}>Guardar</button>
             </li>
           ))}

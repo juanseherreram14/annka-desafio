@@ -1,0 +1,126 @@
+.pokemon-name{
+    font-family: "Press Start 2P", cursive;
+    color: black;
+}
+.pokemon-image{
+    width: 20%;
+  height: auto;
+  max-width: 70%;
+  margin-bottom: 10px;
+
+}
+
+.pokemon-stat-label{
+    font-family: "Press Start 2P", cursive;
+    color: black;
+    margin: 20px;
+}
+
+.btnTipo{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-family: "Press Start 2P", cursive;
+    color: white;
+}
+
+.pokemon-stat-value{
+    margin: 20px;
+}
+
+
+
+
+
+
+
+
+.logo{
+   
+    margin-bottom: 50px;
+  }
+  
+  .SearchBar{
+    margin-bottom: 50px;
+    max-width: 100%;
+    display: flex;
+  }
+  
+  .tarjeta-pokemon-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .TarjetaPokemon {
+  max-width: 80%;
+  margin: 10px;
+  align-items: center;
+  }
+
+
+  .btnGuardar{
+    font-family: "Press Start 2P", cursive;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .btnGuardar:hover {
+    background-color: #eee;
+  }
+
+  .btnVolver{
+    font-family: "Press Start 2P", cursive;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+  }
+  
+  .btnVolver:hover {
+    background-color: #eee;
+  }
+
+
+
+.irPokedex{
+    font-family: "Press Start 2P", cursive;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .irPokedex:hover {
+    background-color: #eee;
+  }
+  
+    
+  
+  .pokemon-details{
+    background-color: aliceblue;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    max-width: 100%;
+  overflow-x: hidden;
+  }
+  
+  
+  @media (max-width: 480px) {
+   
+  
+    li {
+      display: block;
+      margin: 5px;
+    }
+  }

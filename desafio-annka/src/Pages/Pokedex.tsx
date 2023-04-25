@@ -3,10 +3,11 @@ import MyForm from '../Components/UpdateForm.tsx';
 import TarjetaPokemon from '../Components/TarjetaPokemon';
 import axios from 'axios';
 import PdLogo from '../Images/PdLogo.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function Pokedex() {
     const [pokemons, setPokemons] = useState([]);
-  
+    const navigate = useNavigate();
     useEffect(() => {
         const fetchdata = async ()=>{
             await axios.get('http://localhost:4000/api/get')
@@ -34,7 +35,11 @@ export default function Pokedex() {
             </li>
           ))}
         </ul>
+        
         <MyForm />
+        <div>
+                    <button className='btnVolver' onClick={()=>{navigate('/')}}> Volver</button>
+                </div>
       </>
     )
   }
