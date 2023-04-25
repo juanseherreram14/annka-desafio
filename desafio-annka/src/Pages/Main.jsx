@@ -52,7 +52,7 @@ const MainPage = () => {
             <button className="button" onClick={()=>{navigate('/pokedex')}}>Ir a mi pokedex</button>
         </div>
       <div className='tarjeta-pokemon-container'>
-        <ul>
+        <ul className='listaPokemones'>
           {pokeData.map((pokemon, index) => (
             <li key={index}>
                <Link to={`/pokemon/${index + 1}`}>

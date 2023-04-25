@@ -22,7 +22,9 @@ margin: 10px;
 align-items: center;
 }
 
-
+.listaPokemones{
+  list-style: none;
+}
   
 
 .main{
@@ -82,4 +84,6 @@ overflow-x: hidden;
     display: block;
     margin: 5px;
   }
+
+
 }
