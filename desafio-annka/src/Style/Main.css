@@ -1,52 +1,85 @@
 .logo{
-    margin-top: 50px;
-    margin-bottom: 50px;
+   
+  margin-bottom: 50px;
 }
 
 .SearchBar{
-    margin-bottom: 50px;
+  margin-bottom: 50px;
+  max-width: 100%;
+  display: flex;
 }
 
 .tarjeta-pokemon-container {
-  width: 100%;
-  text-align: center;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .TarjetaPokemon {
-  width: 30%;
-  margin: 10px;
-  align-items: center;
+max-width: 80%;
+margin: 10px;
+align-items: center;
 }
 
 
-    
+  
 
 .main{
-    background-color: aliceblue;
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
+  background-color: aliceblue;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  max-width: 100%;
+overflow-x: hidden;
 }
 
 .button {
-    font-family: "Press Start 2P", cursive;
-    color: black;
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 10px;
+  font-family: "Press Start 2P", cursive;
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+
+.button:hover {
+  background-color: #eee;
+}
+
+.btnGuardar{
+  font-family: "Press Start 2P", cursive;
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.btnGuardar:hover {
+  background-color: #eee;
+}
+
+@media (max-width: 768px) {
+  .TarjetaPokemon {
+    max-width: 100%;
   }
-  
-  
-  .button:hover {
-    background-color: #eee;
+}
+
+@media (max-width: 480px) {
+  .TarjetaPokemon {
+    max-width: 100%;
+    font-size: 12px;
+    margin: 5px;
   }
-  
-  .btnGuardar{
-    font-family: "Press Start 2P", cursive;
-    color: black;
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 10px;
+
+  .tarjeta-pokemon-container {
+    flex-direction: column;
   }
+
+  li {
+    display: block;
+    margin: 5px;
+  }
+}

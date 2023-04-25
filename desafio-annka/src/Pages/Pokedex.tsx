@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react';
 import MyForm from '../Components/UpdateForm.tsx';
 import TarjetaPokemon from '../Components/TarjetaPokemon';
 import axios from 'axios';
+import PdLogo from '../Images/PdLogo.png';
 
 export default function Pokedex() {
     const [pokemons, setPokemons] = useState([]);
@@ -19,7 +20,10 @@ export default function Pokedex() {
   
     return (
       <>
-        <h1>Pokedex</h1>
+       <div className='logo'>
+        <img src={PdLogo} alt="Pd Logo" />
+      </div>
+       
         <ul>
           {pokemons && pokemons.map((pokemon: any) => (
             <li key={pokemon.name}>
