@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { PokeData } from '../Components/ConsumePokeAPI.tsx';
 import SearchBar from '../Components/SearchBar';
@@ -10,6 +11,7 @@ const MainPage = () => {
   const AddToPokedexURL = "localhost:5000/api/addToPokeDex"
   const [pokeData, setPokeData] = useState([])
   const [names, setNames] = useState([]);
+  const navigate = useNavigate();
 
     useEffect(() => {
        
@@ -82,7 +84,7 @@ const MainPage = () => {
             </div>
 
         <div>
-            <button className="button">Ir a mi pokedex</button>
+            <button className="button" onClick={()=>{navigate('/pokedex')}}>Ir a mi pokedex</button>
         </div>
         </body>
     ) 
