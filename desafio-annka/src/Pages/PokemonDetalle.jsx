@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import '../Style/PokemonDetalle.css';
+import { Link } from 'react-router-dom';
 
 const PokemonDetalle = () => {
     const AddToPokedexURL = "localhost:5000/api/addToPokeDex";
@@ -65,17 +66,21 @@ const PokemonDetalle = () => {
           <div className="pokemon-stat-label">Peso:</div>
           <div className="pokemon-stat-value">{weight / 10} kg</div>
         </div>
+
         <div className="pokemon-stat">
         <div className="pokemon-stat-label">Tipos:</div>
+       
         <ul className="pokemon-type-list">
             {pokemonTypes.map(type => (
-            <li key={type} className={`card-type ${type}`}>
+            <li key={type} className={`card-type ${type}`}  onClick={()=>{navigate(`/tipo/${type}`)}}>
+               
                 <button className='btnTipo' onClick={() => handleTypeClick(type)}>
                 {type}
                 </button>
             </li>
     ))}
   </ul>
+ 
 </div>
 
         <div className="pokemon-stat">
