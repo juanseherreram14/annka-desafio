@@ -69,18 +69,6 @@ const MainPage = () => {
   }
 
 
-  async function fetchDataByNumber (pokemonName) {
-    try {
-      const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
-      const types = data.types.map((type) => type.type.name);
-      const newData = { name: data.name, number: data.id, types: types, url: `https://pokeapi.co/api/v2/pokemon/${data.id}` };
-      setPokeData([newData]);
-      setNames([{ name: data.name, url: `https://pokeapi.co/api/v2/pokemon/${data.name}` }]);
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
 
   async function fetchDataByName(pokemonName) {
     try {
@@ -88,7 +76,7 @@ const MainPage = () => {
       const types = data.types.map((type) => type.type.name);
       const newData = { name: data.name, number: data.id, types: types, url: `https://pokeapi.co/api/v2/pokemon/${data.id}` };
       setPokeData([newData]);
-      setNames([{ name: data.name, url: `https://pokeapi.co/api/v2/pokemon/${data.name}` }]);
+      setNames([{ name: data.name, url: `https://pokeapi.co/api/v2/pokemon/${data.name}   ` }]);
     } catch (error) {
       console.error(error);
     }
