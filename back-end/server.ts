@@ -8,6 +8,7 @@ import { DeleteElementNumber } from './APIRoutes/DeleteElement';
 
 import mongoose from 'mongoose';
 import cors from 'cors';
+import bodyParser from 'body-parser';
 
 const app = express();
 
@@ -31,6 +32,8 @@ DBconn();
 
 app.use(express.json());
 app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/pokemon', GetPokeData);
 app.post('/api/add', AddToPokeDex);
 app.get('/api/get', GetAllPokemonData);

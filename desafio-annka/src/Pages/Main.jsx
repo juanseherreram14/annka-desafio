@@ -12,30 +12,40 @@ import { Link } from 'react-router-dom';
 
 
 const MainPage = () => {
-  const AddToPokedexURL = "localhost:5000/api/addToPokeDex"
+  const AddToPokedexURL = "http://localhost:4000/api/add"
   const [pokeData, setPokeData] = useState([])
   const [names, setNames] = useState([]);
   const navigate = useNavigate();
 
 
   useEffect(() => {
-    async function fetchdata() {
-  
+    async function fetchData() {
       const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=151');
       const pokemonList = response.data.results;
-      const newData = await Promise.all(pokemonList.map(async (pokemon) => {
-        const { data } = await axios.get(pokemon.url);
-        const types = data.types.map(type => type.type.name);
-        return { name: pokemon.name, number: data.id, types: types };
-      }));
+  
+      const newData = await Promise.all(
+        pokemonList.map(async (pokemon) => {
+          const { data } = await axios.get(pokemon.url);
+          const types = data.types.map((type) => type.type.name);
+          return { name: pokemon.name, number: data.id, types: types, url: pokemon.url };
+        })
+      );
+  
       setPokeData(newData);
       setNames(pokemonList);
     }
-    fetchdata();
+  
+    fetchData();
   }, []);
 
-  const SubmitPokeButton = ({ name, url }) => {
-    axios.post(`${AddToPokedexURL}?name=${name}&url=${url}`)
+  const SubmitPokeButton = async (name, url) => {
+    try {
+      await axios.post(`${AddToPokedexURL}`, { name, url });
+      alert(`${name} was added to your Pokedex!`);
+    } catch (error) {
+      console.error(error);
+      alert('There was an error adding the Pokemon to your Pokedex.');
+    }
   }
 
  
@@ -68,7 +78,7 @@ const MainPage = () => {
                   </TarjetaPokemon>
             </Link>
              
-              <button className='btnGuardar' onClick={() => SubmitPokeButton({ name: pokemon.name, url: pokemon.url })}>Guardar</button>
+            <button className='btnGuardar' onClick={() => SubmitPokeButton(pokemon.name, pokemon.url)}>Guardar</button>
             </li>
           ))}
         </ul>

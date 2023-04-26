@@ -18,7 +18,16 @@ export default function Pokedex() {
         }
         fetchdata()
     }, [])
-  
+
+
+    const deleteElementNumber = async (id: number) => {
+      try {
+        const response = await axios.delete(`http://localhost:4000/api/delete/${id.toString()}`);
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
     return (
       <>
        <div className='logo'>
@@ -29,8 +38,7 @@ export default function Pokedex() {
           {pokemons && pokemons.map((pokemon: any) => (
             <li key={pokemon.name}>
               {pokemon.name}
-              <button>Delete</button>
-              <button> Ver info </button>
+              <button className='btnGuardar' onClick={()=>{deleteElementNumber(pokemon.name)}}>Delete</button>
 
             </li>
           ))}

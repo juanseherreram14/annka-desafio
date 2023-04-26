@@ -29,7 +29,7 @@ placeholder="Nuevo nombre"
 value={name}
 onChange={(event) => setName(event.target.value)}
 />
-<button type="submit">Actualizar</button>
+<button className='btnVolver' type="submit">Actualizar</button>
 </form>
 );
 };

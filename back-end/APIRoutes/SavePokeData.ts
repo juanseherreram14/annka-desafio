@@ -5,6 +5,7 @@ import PokeDexModel from '../Models/PokeDexModel';
 
 export async function AddToPokeDex(req: Request, res: Response) {
   try {
+    console.log(req.body); // Add this line to check the body of the request
     const newPokemon = new PokeDexModel({
       name: req.body.name,
       url: req.body.url,
