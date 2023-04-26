@@ -5,6 +5,7 @@ import { PokeData } from '../Components/ConsumePokeAPI.tsx';
 import SearchBar from '../Components/SearchBar';
 import PdLogo from '../Images/PdLogo.png';
 import '../Style/Main.css';
+import '../Style/SearchBar.css'
 import TarjetaPokemon from '../Components/TarjetaPokemon';
 import { Link } from 'react-router-dom';
 
@@ -16,7 +17,7 @@ const MainPage = () => {
   const [pokeData, setPokeData] = useState([])
   const [names, setNames] = useState([]);
   const navigate = useNavigate();
-
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     async function fetchData() {
@@ -38,6 +39,63 @@ const MainPage = () => {
     fetchData();
   }, []);
 
+  const handleSearchClick = () => {
+    if (searchTerm) {
+
+      if (searchTerm.length === 1 || searchTerm.length === 2) {
+        fetchDataByNumber(searchTerm);
+      } else {
+        fetchDataByName(searchTerm);
+      }
+    }
+  };
+
+
+  const handleInputChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+
+  async function fetchDataByNumber(pokemonName) {
+    try {
+      const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+      const types = data.types.map((type) => type.type.name);
+      const newData = { name: data.name, number: data.id, types: types, url: `https://pokeapi.co/api/v2/pokemon/${data.id}` };
+      setPokeData([newData]);
+      setNames([{ name: data.name, url: `https://pokeapi.co/api/v2/pokemon/${data.name}` }]);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+
+  async function fetchDataByNumber (pokemonName) {
+    try {
+      const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+      const types = data.types.map((type) => type.type.name);
+      const newData = { name: data.name, number: data.id, types: types, url: `https://pokeapi.co/api/v2/pokemon/${data.id}` };
+      setPokeData([newData]);
+      setNames([{ name: data.name, url: `https://pokeapi.co/api/v2/pokemon/${data.name}` }]);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+
+  async function fetchDataByName(pokemonName) {
+    try {
+      const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`);
+      const types = data.types.map((type) => type.type.name);
+      const newData = { name: data.name, number: data.id, types: types, url: `https://pokeapi.co/api/v2/pokemon/${data.id}` };
+      setPokeData([newData]);
+      setNames([{ name: data.name, url: `https://pokeapi.co/api/v2/pokemon/${data.name}` }]);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  
+
   const SubmitPokeButton = async (name, url) => {
     try {
       await axios.post(`${AddToPokedexURL}`, { name, url });
@@ -56,7 +114,11 @@ const MainPage = () => {
         <img src={PdLogo} alt="Pd Logo" />
       </div>
       <div className='SearchBar'>
-        <SearchBar />
+        <input   className="search-input"  type="text" value={searchTerm} onChange={handleInputChange} />
+      <button  className="search-button" onClick={handleSearchClick}> <img src="https://img.icons8.com/ios/50/000000/search--v1.png" alt="Buscar" className="search-icon" /></button>
+        <div>
+    
+    </div>
       </div>
       <div>
             <button className="button" onClick={()=>{navigate('/pokedex')}}>Ir a mi pokedex</button>
