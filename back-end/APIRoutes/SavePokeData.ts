@@ -9,6 +9,8 @@ export async function AddToPokeDex(req: Request, res: Response) {
     const newPokemon = new PokeDexModel({
       name: req.body.name,
       url: req.body.url,
+      valor: req.body.valor,
+      fechaInventario: req.body.fechaInventario,
     });
     await newPokemon.save();
     res.status(201).json(newPokemon);

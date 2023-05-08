@@ -3,6 +3,8 @@ import { Document, Schema, model } from 'mongoose';
 interface PokeDex extends Document {
   name: string;
   url: string;
+  valor: number;
+  fechaInventario: Date;
 }
 
 const PokeDexSchema = new Schema<PokeDex>(
@@ -15,6 +17,16 @@ const PokeDexSchema = new Schema<PokeDex>(
       type: String,
       required: true,
     },
+    valor: {
+      type: Number,
+      required: true,
+    },
+    fechaInventario: {
+      type: Date,
+      required: true,
+      default: Date.now,
+    },
+
   },
   {
     timestamps: true, 

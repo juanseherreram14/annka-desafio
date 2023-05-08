@@ -5,6 +5,8 @@ import { GetAllPokemonData } from './APIRoutes/GetPokedex';
 import { DeleteElement } from './APIRoutes/DeleteElement';
 import { UpdateElementByName } from './APIRoutes/UpdateElement';
 import { DeleteElementNumber } from './APIRoutes/DeleteElement';
+import { GetElementById } from './APIRoutes/GetPokeByID';
+import { FindByName } from './APIRoutes/GetPokeByID';
 
 import mongoose from 'mongoose';
 import cors from 'cors';
@@ -39,12 +41,12 @@ app.post('/api/add', AddToPokeDex);
 app.get('/api/get', GetAllPokemonData);
 app.delete('/api/delete/:id', DeleteElementNumber);
 app.put('/api/update/:name', UpdateElementByName);
-
+app.get('/api/get/:id', GetElementById);
+app.get('/api/get/:name', FindByName);
 
 
 //npx ts-node-dev server.ts
 app.listen(4000, () => {
-console.log('Server is running on port 3000');
+console.log('Server is running on port 4000');
 });
 
-// Note
