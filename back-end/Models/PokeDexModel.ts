@@ -4,7 +4,6 @@ interface PokeDex extends Document {
   name: string;
   url: string;
   valor: number;
-  fechaInventario: Date;
 }
 
 const PokeDexSchema = new Schema<PokeDex>(
@@ -21,11 +20,7 @@ const PokeDexSchema = new Schema<PokeDex>(
       type: Number,
       required: true,
     },
-    fechaInventario: {
-      type: Date,
-      required: true,
-      default: Date.now,
-    },
+    
 
   },
   {
